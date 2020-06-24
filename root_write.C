@@ -23,5 +23,5 @@
     }
     t->Fill();
     f->Write();
-    delete f;
+    f->Close();
 }
