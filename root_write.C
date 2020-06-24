@@ -19,7 +19,7 @@
     TTree *t = new TTree("tvec","Tree with vectors");
     t->Branch("tempvec",&temp_vec);
     for(int i=0;i<10;i++){
-      temp_vec.pushback(i);
+      temp_vec.push_back(i);
     }
     t->Fill();
     f->Write();
