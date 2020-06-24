@@ -10,7 +10,7 @@
  #include "TSystem.h"
 using namespace std;
 
-void read()
+void root_read()
  {
  
     TFile *f1 = TFile::Open("temp_file.root","READ");
