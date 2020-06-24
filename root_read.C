@@ -17,7 +17,7 @@ void read()
     if (!f1) { return; }
  
     std::vector<float> *temp_vec = 0;
-    TTree *t1 = (TTree*)f1.Get("tvec");
+    TTree *t1 = (TTree*)f1->Get("tvec");
     t1->SetBranchAddress("tvec",&temp_vec);
     for (int i=0;i<10;i++){
       t1->GetEntry(i);
