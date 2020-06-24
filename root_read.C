@@ -8,20 +8,23 @@
  #include "TBenchmark.h"
  #include "TRandom.h"
  #include "TSystem.h"
+using namespace std;
 
 void read()
  {
  
     TFile *f = TFile::Open("temp_file.root","READ");
- 
     if (!f) { return; }
  
-    TTree *t1; f->GetObject("tvec",t);
- 
     std::vector<float> *temp_vec = 0;
-    t1->SetBranchAddress("tvec",&temp_vec)
+    TTree *t1; f->GetObject("tvec",&temp_vec);
+    t1->SetBranchAddress("tvec",&temp_vec);
     for (int i=0;i<10;i++){
       t1->GetEntry(i);
     } 
-    t->ResetBranchAddresses();
+    for (int j=0;j<10;j++){
+     std::cout<<temp_vec->at(j)<<" ";
+    }
+    std::cout<<endl;
+    t1->ResetBranchAddresses();
  }
